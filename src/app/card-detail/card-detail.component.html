@@ -1,0 +1,28 @@
+<div class="overlay" (click)="hideOverlay()" #overlay>
+    <img src="assets/icon/stickybomb-icon.png" alt="stickybomb icon">
+    <p>Please tap to present your opinion</p>
+</div>
+
+<div class="background">
+    <p *ngIf="isTimeInfo" class="time-info">
+        {{ time }}
+    </p>
+
+    <div *ngIf="!isTimeInfo && routeParam === 'smoke'" class="smoke">
+        <img src="assets/icon/smoking.png" alt="smoke icon">
+    </div>
+
+    <div *ngIf="!isTimeInfo && routeParam === 'unpredictable'" class="unpredictable">
+        <img src="assets/icon/question.png" alt="unpredictable icon">
+    </div>
+
+    <div *ngIf="showTimeInput" class="time-input">
+        <ion-input [(ngModel)]="timeInputValue" [value]="timeInputValue" placeholder="Please enter man-day"></ion-input>
+        <ion-button (click)="updateCustomTimeInput()">Accepted</ion-button>
+    </div>
+    <div class="button-container">
+        <ion-button *ngIf="isTimeInfo" (click)="updateTotalManDay()">Accepted</ion-button>
+        <ion-button *ngIf="isTimeInfo" (click)="openTimeInput()">Rejected</ion-button>
+        <ion-button (click)="redirectToHome()">Try again</ion-button>
+    </div>
+</div>

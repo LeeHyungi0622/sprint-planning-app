@@ -1,17 +1,70 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Cards #Sprint Round: {{ sprintRound }}
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content [fullscreen]="true" [scrollY]="true">
+    <div class="contents-container">
+        <ion-header collapse="condense">
+            <ion-toolbar>
+                <ion-title size="large">#Sprint Round: {{ sprintRound }}</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <div class="top-subtitle">
+            <ion-card-subtitle> <span class="title">#Item:</span> {{ numOfProceededItems }} / {{ numOfItems }}</ion-card-subtitle>
+            <ion-card-subtitle> <span class="title">#Total Man-day</span><br/> <span class="total-man-day">{{ totalManDay }} day(s)</span> * 8 hours = <span class="total-man-hour">{{ totalManDay * 8 }} hours</span></ion-card-subtitle>
+        </div>
+        <div>
+            <div cards>
+                <div class="grid-full">
+                    <ion-row class="extra-selection-group">
+                        <ion-card class="extra-selection" [routerLink]="'manhour/smoke'">
+                            <ion-card-header>
+                                <ion-card-subtitle>SMOKING <br> TIME</ion-card-subtitle>
+                                <img src="assets/icon/smoking.png" alt="smoking icon">
+                            </ion-card-header>
+                        </ion-card>
+                        <ion-card class="extra-selection" [routerLink]="'manhour/unpredictable'">
+                            <ion-card-header>
+                                <ion-card-subtitle>UNPREDICTABLE</ion-card-subtitle>
+                                <img class="question" src="assets/icon/question.png" alt="unpredictable icon">
+                            </ion-card-header>
+                        </ion-card>
+                    </ion-row>
+                </div>
+                <div class="grid-full">
+                    <ion-row class="extra-input-group">
+                        <ion-card class="extra-input">
+                            <ion-card-header>
+                                <div class="sub-title-group">
+                                    <ion-card-subtitle>CUSTOM INPUT</ion-card-subtitle>
+                                    <img src="assets/icon/pencil.png" alt="custom input icon">
+                                </div>
+                                <input class="custom-input" type="text" [(ngModel)]="inputTime" #customInput />
+                            </ion-card-header>
+                            <button class="submit-button" [routerLink]="'manhour/'+inputTime" (click)="customInput.value=''">Submit</button>
+                        </ion-card>
+                    </ion-row>
+                </div>
+                <div class="grid-full">
+                    <ion-row>
+                        <ng-container *ngFor="let n of numberList">
+                            <ion-col>
+                                <ion-card>
+                                    <ion-card-header [routerLink]="'manhour/'+n">
+                                        <ion-card-subtitle>MAN DAY</ion-card-subtitle>
+                                        <img src="assets/icon/trineedle-logo.png" alt="">
+                                    </ion-card-header>
+                                    <div class="main-contents">{{ n }}</div>
+                                </ion-card>
+                            </ion-col>
+                        </ng-container>
+                    </ion-row>
+                </div>
+            </div>
+        </div>
+    </div>
 </ion-content>

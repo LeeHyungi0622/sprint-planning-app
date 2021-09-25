@@ -1,0 +1,21 @@
+.setting-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 30px;
+    label {
+        width: 200px;
+    }
+}
+
+.sprint-round-controller {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-info-controller {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

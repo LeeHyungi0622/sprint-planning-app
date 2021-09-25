@@ -1,0 +1,88 @@
+.extra-selection-group {
+    display: flex;
+    justify-content: center;
+    .extra-selection {
+        width: 105px;
+        ion-card-header {
+            font-size: 10px;
+        }
+        .question {
+            margin-top: 1px;
+        }
+    }
+}
+
+.top-subtitle {
+    padding: 10px;
+    ion-card-subtitle {
+        font-size: 16px;
+    }
+    .total-man-day {
+        color: red;
+    }
+    .total-man-hour {
+        color: blue;
+    }
+    .title {
+        color: black;
+    }
+}
+
+ion-card {
+    border: 3px solid black;
+    ion-card-header {
+        background: #c585f7;
+        ion-card-subtitle {
+            font-size: 12px;
+            color: black;
+        }
+    }
+    .main-contents {
+        color: black;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        font-size: 50px;
+        text-align: center;
+    }
+}
+
+.extra-input-group {
+    display: flex;
+    justify-content: center;
+    .extra-input {
+        display: flex;
+        ion-card-header {
+            display: flex;
+            flex-direction: column;
+        }
+        width: 400px;
+        .sub-title-group {
+            display: flex;
+            align-items: center;
+            img {
+                width: 30px;
+                height: 30px;
+                margin-left: 10px;
+            }
+        }
+        .custom-input {
+            background: white;
+            margin-left: 30px;
+            border: none;
+            border-bottom: 1px solid black;
+            outline: none;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 15px;
+        }
+        .submit-button {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            display: block;
+            background: purple;
+            font-size: 15px;
+            font-weight: 800;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+    }
+}

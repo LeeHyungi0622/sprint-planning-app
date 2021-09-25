@@ -1,17 +1,26 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+        <ion-title>
+            Settings
+        </ion-title>
     </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Settings</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <div class="setting-info">
+        <div class="sprint-round-controller">
+            <label for="sprintRound">#Sprint Round</label>
+            <ion-input type="number" id="sprintRound" [(ngModel)]="sprintRound" [value]="sprintRound"></ion-input> <br/>
+        </div>
+        <div class="item-info-controller">
+            <label for="numOfItem">#Number Of Items</label>
+            <ion-input type="number" id="numOfItem" [(ngModel)]="numOfItems" [value]="numOfItems"></ion-input>
+        </div>
+        <ion-button (click)="updateSettings()">Update</ion-button>
+        <ion-button (click)="resetSettings()">Reset</ion-button>
+    </div>
 </ion-content>
