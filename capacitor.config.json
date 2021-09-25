@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "stickybomb-sprint-planning-app",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

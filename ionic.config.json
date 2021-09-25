@@ -1,0 +1,7 @@
+{
+  "name": "stickybomb-sprint-planning-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
